@@ -23,10 +23,10 @@ public class ProjectImporter {
 	
 	private String[] folders;
 	
-	private boolean ignoreFeatureProject;
+	/*private boolean ignoreFeatureProject;
 	private boolean ignoreNL1NL2;
 	
-	private IWorkbenchPage activePage;
+	private IWorkbenchPage activePage;*/
 	
 	final String dotProject = IProjectDescription.DESCRIPTION_FILE_NAME;
 	final String METADATA_FOLDER = ".metadata";
@@ -34,7 +34,6 @@ public class ProjectImporter {
 	public ProjectImporter(IWorkbenchPage activePage) {
 		overrideProject = true;
 		folders = new String[]{"E:/temp/"};
-		this.activePage = activePage;
 	}
 	
 	public String load() {
