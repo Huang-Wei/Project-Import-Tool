@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Import Action Set"
+            visible="true"
+            id="ProjectImportTool.actionSet">
+         <action
+               label="&amp;Import Actiontion"
+               icon="icons/sample.gif"
+               class="cn.hweicdl.projectimport.ui.ProjectImportAction"
+               tooltip="Import Projects"
+               menubarPath="importMenu/importGroup"
+               toolbarPath="importGroup"
+               id="cn.hweicdl.projectimport.ProjectImportAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="cn.hweicdl.projectimport.preference.ProjectImportPreferencePage"
+            id="cn.hweicdl.projectimport.preference.ProjectImportPreferencePage"
+            name="Project Import Tool">
+      </page>
+   </extension>
+
+</plugin>
