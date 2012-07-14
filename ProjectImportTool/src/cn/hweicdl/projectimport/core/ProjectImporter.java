@@ -1,3 +1,6 @@
+/*
+ * Create on 2012-7-11
+ */
 package cn.hweicdl.projectimport.core;
 
 import java.io.File;
@@ -7,7 +10,6 @@ import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -17,6 +19,11 @@ import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.IWorkingSetManager;
 import org.eclipse.ui.PlatformUI;
 
+import cn.hweicdl.projectimport.preference.Constants;
+
+/**
+ * @author Wei Huang
+ */
 public class ProjectImporter {
 
 	private boolean overrideProject;
@@ -28,8 +35,9 @@ public class ProjectImporter {
 	
 	private IWorkbenchPage activePage;*/
 	
-	final String dotProject = IProjectDescription.DESCRIPTION_FILE_NAME;
-	final String METADATA_FOLDER = ".metadata";
+	public ProjectImporter() {
+		
+	}
 	
 	public ProjectImporter(IWorkbenchPage activePage) {
 		overrideProject = true;
@@ -92,7 +100,7 @@ public class ProjectImporter {
 		workingSetManager.addWorkingSet(ws);
 	}
 	
-	private List<IResource> getAllProjects(IWorkingSet ws) {
+	/*private List<IResource> getAllProjects(IWorkingSet ws) {
 		List<IResource> resources = new ArrayList<IResource>(); // or LinkedList
 		for (IAdaptable adaptable : ws.getElements()) {
 			IResource r = (IResource) adaptable.getAdapter(IResource.class);
@@ -100,7 +108,7 @@ public class ProjectImporter {
 				resources.add(r);
 		}
 		return resources;
-	}
+	}*/
 	
 	public void getAllProjects(File dir, List<File> files) {
 		File[] folders = dir.listFiles();
@@ -110,17 +118,16 @@ public class ProjectImporter {
 		
 		for (int i = 0; i < folders.length; i++) {
 			File file = folders[i];
-			if (file.isFile() && file.getName().equals(dotProject)) {
+			if (file.isFile() && file.getName().equals(Constants.DOT_PROJECT)) {
 				files.add(file);
-				// don't search sub-directories since we can't have nested
-				// projects
+				// don't search sub-directories since we can't have nested projects
 			}
 		}
 		
 		// no project description found, so recurse into sub-directories
 		for (int i = 0; i < folders.length; i++) {
 			if (folders[i].isDirectory()) {
-				if (!folders[i].getName().equals(METADATA_FOLDER)) {
+				if (!folders[i].getName().equals(Constants.METADATA_FOLDER)) {
 					getAllProjects(folders[i], files);
 				}
 			}

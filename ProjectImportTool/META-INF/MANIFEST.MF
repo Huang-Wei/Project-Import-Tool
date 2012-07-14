@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ProjectImportTool
 Bundle-SymbolicName: ProjectImportTool; singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: cn.hweicdl.projectimport.ProjectImportActivator
-Bundle-Vendor: hweicdl
+Bundle-Vendor: Wei Huang
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources

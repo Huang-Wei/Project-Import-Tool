@@ -13,7 +13,6 @@
                icon="icons/sample.gif"
                class="cn.hweicdl.projectimport.ui.ProjectImportAction"
                tooltip="Import Projects"
-               menubarPath="importMenu/importGroup"
                toolbarPath="importGroup"
                id="cn.hweicdl.projectimport.ProjectImportAction">
          </action>

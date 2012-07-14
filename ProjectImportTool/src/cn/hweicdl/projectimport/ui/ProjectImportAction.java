@@ -1,3 +1,6 @@
+/*
+ * Create on 2012-7-11
+ */
 package cn.hweicdl.projectimport.ui;
 
 import org.eclipse.jface.action.IAction;
@@ -9,12 +12,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import cn.hweicdl.projectimport.core.ProjectImporter;
 
 /**
- * Our sample action implements workbench action delegate.
- * The action proxy will be created by the workbench and
- * shown in the UI. When the user tries to use the action,
- * this delegate will be created and execution will be 
- * delegated to it.
- * @see IWorkbenchWindowActionDelegate
+ * @author Wei Huang
  */
 public class ProjectImportAction implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;

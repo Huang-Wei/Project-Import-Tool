@@ -1,3 +1,6 @@
+/*
+ * Create on 2012-7-11
+ */
 package cn.hweicdl.projectimport;
 
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -5,6 +8,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 /**
+ * @author Wei Huang
+ * <p>
  * The activator class controls the plug-in life cycle
  */
 public class ProjectImportActivator extends AbstractUIPlugin {
